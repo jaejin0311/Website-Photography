@@ -1,0 +1,149 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+
+.logo{
+  height:50px; 
+  width:100px;
+  position: absolute; 
+  margin-top:10px; 
+  margin-left:10px;
+  background-image: url("website-image/logofinalfinal.png");
+  background-size: cover;
+  background-position: center center;
+  z-index:10;
+  
+}
+
+.logo-hover{
+  height:50px; 
+  width:100px;
+  position: absolute; 
+  margin-top:10px; 
+  margin-left:10px;
+  background-image: url("website-image/logowhite.png");
+  background-size: cover;
+  background-position: center center;
+  z-index:10;
+}
+
+
+.nav{
+  height:70px;
+  font-family: 'Forum', cursive;
+  position: absolute;
+  width:100%;
+  z-index: 1000;
+  
+}
+
+.nav-hover{
+  height:70px;
+  font-family: 'Forum', cursive;background-color: white !important;
+  position: absolute;
+  width:100%;
+}
+
+nav h1{
+  position: absolute;
+  width: 200px;
+  top:8px;
+  left:5%;
+  color:white;
+  text-transform: uppercase;
+}
+
+nav ul{
+  list-style: none;
+  width:700px;
+  height:50px;
+  margin-top: 10px;
+  margin-left:25%;
+  float:right;
+  z-index: 1000;
+
+}
+
+nav ul li{
+  line-height: 50px;
+  margin: 0 15 px;
+  width:auto;
+  height:50px;
+  text-align: center;
+  margin-right: 6.5%;
+  display:inline-block;
+  z-index: 1000;
+}
+
+nav ul li a{
+  padding: 5px 0;
+  color:white;
+  font-size: 18px;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+#sign-one,
+#sign-two{
+  font-size: 30px;
+  color: #fff;
+  float:right;
+  line-height:30px;
+  cursor:pointer;
+  display:none;
+  margin-top:20px;
+  margin-right:20px;
+  z-index: 1000;
+}
+
+.fa-bars-hover{
+  color:black !important;
+  z-index: 1000;
+}
+
+#res-menu{
+  display:none;
+  z-index: 1000;
+}
+
+@media (max-width: 925px){
+  #sign-one{
+    display:block;
+  }
+
+  nav ul{
+    position: absolute;
+    width:100%;
+    height:710px;
+    background: white;
+    top:60px;
+    left: -100%;
+    text-align: center;
+    transition: .5s;
+    z-index: 10;
+    margin-left:0;
+    float:center;
+  }
+
+  nav ul li{
+    margin-top: 30px;
+    line-height: 80px;
+    width:100%;
+    height:80px;
+    margin-right:0;
+    float:center !important;
+  }
+  nav ul li a{
+    font-size: 20px;
+    color:black;
+  }
+  #res-menu:checked ~ ul{
+    left:0;
+  }
+}
+
+nav ul li a:hover{
+  color:grey;
+}

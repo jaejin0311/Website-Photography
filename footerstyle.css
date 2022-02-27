@@ -1,0 +1,128 @@
+.footer{
+    width:100%;
+    height:30vw;
+}
+
+.footer-text{
+    width:150px;
+    margin-left:auto;
+    margin-right:auto;
+    height:40px;
+    
+
+}
+
+.instagram-tag > p{
+    text-align: center;
+    font-size:1.5rem;
+    font-family: 'Forum', cursive;
+    text-transform: uppercase;
+}
+
+.instagram-tag{
+    width:auto;
+    float:left;
+}
+
+.instagram{
+    width:2rem;
+    height:2rem;
+    background-image: url("website-image/instagram-icon.png");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    float:left;
+}
+
+.instagram-id{
+    margin-bottom:30px;
+}
+
+.instagram-id > p{
+    text-align: center;
+    font-size:1.3rem;
+    font-family: 'Forum', cursive;
+}
+
+.footer-picture{
+    width:80vw;
+    margin-left:10%;
+    height:13.6vw;
+    opacity: 0.71;
+}
+
+.footer-picture1{
+    background-image: url("website-image/footerpic1.JPG");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    float:left;
+}
+
+.footer-picture2{
+    background-image: url("website-image/Portraits\ slideshow\ image.jpg");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    float:left;
+}
+
+.footer-picture3{
+    background-image: url("website-image/footerpic3.jpg");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    float:left;
+}
+
+.footer-picture4{
+    background-image: url("website-image/footerpic4.jpg");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    float:left;
+}
+
+.footer-picture5{
+    background-image: url("website-image/footerpic5.jpg");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    float:left;
+}
+
+.footerpicture{
+    width:13.6vw;
+    height:13.6vw;
+    margin-left:3vw;
+}
+
+.logos{
+    width:6rem;
+    height:2.5rem;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+.logo1{
+    width:2.5rem;
+    height:2.5rem;
+    background-image: url("website-image/facebook-icon.png");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    float:left;
+    margin-right:1rem;
+}
+
+.logo2{
+    width:2.5rem;
+    height:2.5rem;
+    background-image: url("website-image/instagram-icon.png");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    float:left;
+}

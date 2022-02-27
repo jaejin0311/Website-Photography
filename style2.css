@@ -1,0 +1,382 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+/* slideshow 1*/
+
+.mySlides{
+    width:100%;
+    height:80vh;
+}
+
+
+#mySlides1 {
+    width:100%;
+    height:80vh;
+    background-image: url("website-image/slideshow1.JPG");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+#mySlides2 {
+    width:100%;
+    height:80vh;
+    background-image: url("website-image/slideshow2.jpeg");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+#mySlides3 {
+    width:100%;
+    height:80vh;
+    background-image: url("website-image/slideshow3.jpeg");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+
+
+img {
+    vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width:100%;
+  height:80vh;
+  position: relative;
+  margin-bottom:5%;
+  overflow:hidden;
+
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 4vw;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Forum', cursive;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  font-family: 'Forum', cursive;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin-bottom:5%;
+  margin-top:5%;
+  display:none;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+
+/* mobile */
+
+
+
+@media screen and (max-width: 650px){
+    body{
+        overflow-x: hidden;
+    }
+}
+
+.section{
+    width:100%;
+}
+
+.index-section1{
+    width:100%;
+    height:auto;
+    
+}
+
+.section1{
+    width:100%;
+    height:500px;
+}
+
+.section1-text{
+    width:48vw;
+    height:auto;
+
+}
+
+.section1-image{
+    width:32vw;
+    height:32vw;
+    background-image: url(website-image/IMG_8549.jpg);
+    background-position: center center;
+    background-size: cover;
+    overflow:hidden;
+}
+
+.section1-text, .section1-image{
+    float:left;
+}
+
+.section1-text{
+    margin-left:10%;
+    line-height:1.3;
+}
+
+h1{
+    font-size:2.3rem;
+    font-family: 'Forum', cursive;
+}
+
+h2{
+    font-size:1.5rem;
+    font-family: 'Forum', cursive;
+}
+
+h3{
+    text-align:center;
+    font-size:2rem;
+    font-family: 'Forum', cursive;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    text-decoration: none;
+}
+
+
+.title{
+    width:100%;
+    text-align: center;
+    margin-bottom:4%;
+}
+
+.boxtext{
+    font-family: 'Forum', cursive;
+    text-align: center;
+    margin-top:10px;
+    height:300px;
+    font-size: 20px;
+}
+
+.boxtext2{
+    font-family: 'Forum', cursive;
+    text-align: center;
+    margin-top:10px;
+    height:50px;
+    font-size: 20px;
+}
+
+
+.box1image{
+    background-image: url("website-image/IMG_7076_Original.jpg");
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.box2image{
+    background-image: url("website-image/Rafael\ Gomez\ Head\ shot.jpg");
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.box3image{
+    background-image: url("website-image/section3-image2.JPG");
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.box21image{
+    background-image: url("website-image/baby.jpg");
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.box22image{
+    background-image: url("website-image/camera-690163_1920.jpg");
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.box23image{
+    background-image: url("website-image/box4.jpeg");
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.box24image{
+    background-image: url("website-image/box5.jpeg");
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+
+.section-title{
+    width:100%;
+    height: 8vh;
+    text-align:center;
+    font-family: 'Forum', cursive;
+    font-size:200%;
+    text-transform: uppercase;
+}
+
+.index-section3{
+    width:100%;
+    height:850px;
+    margin-bottom:5%;
+    text-align: center;
+    display: inline-block;
+}
+
+.section2{
+    width:100%;
+    height:auto;
+    text-align: center;
+    display: inline-block;
+    margin-bottom:5%;
+    margin-top:5%;
+}
+
+
+.box{
+    cursor:pointer;
+    height: 700px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+a:link{
+    text-decoration: none;
+}
+
+.box, .boximage, .boxtext{
+    width:24vw;
+    height:38vw;
+}
+
+.box2, .boximage2{
+    width:37.5vw;
+    height:37.5vw;
+}
+
+.box2{
+    cursor:pointer;
+    display: inline-block;
+}
+
+
+.row1{
+    margin-bottom:2%;
+}
+
+.boximage2 > p{
+    font-size:5vw;
+    color:white;
+    margin-top: 17vw;
+}
+
+.boxtext > p{
+    line-height:25px;
+    text-align: left;
+}
+
+.boxtext > h1{
+    text-align: left;
+    font-size: 35px;
+    margin-bottom:10px;
+}

@@ -1,0 +1,62 @@
+.photobody{
+    width:100%;
+    height:100%;
+    float:left;
+}
+
+.picrow1{
+    width: 30.6%;
+    height:100%;
+    float:left;
+    padding:1%;
+    margin-left:1.2%;
+}
+
+.picrow2{
+    width: 30.6%;
+    height:100%;
+    float:left;
+    padding:1%;
+}
+
+.picrow3{
+    width: 30.6%;
+    height:100%;
+    float:left;
+    padding:1%;
+}
+
+.row{
+    margin-bottom:4%;
+}
+
+.header{
+    width:100%;
+    height:10vh;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.headtext{
+    width:26%;
+    height:4vh;
+    z-index: 2;
+    position: absolute;
+    color:black;
+    flex-direction:row;
+    text-align: center;
+    font-family: 'Playfair Display', cursive;
+    vertical-align: middle;
+    margin-top:3vh;
+    font-size:120%;
+    line-height:4vh;
+}
+
+hr{
+    margin-top:5vh;
+    margin-bottom:5vh;
+}
+
+.photo-banner{
+    background-image: url(website-image/lens-1209823_1920.jpg);
+}
