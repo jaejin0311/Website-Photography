@@ -1,0 +1,182 @@
+# Type code here
+from collections import namedtuple
+ItemToPurchase = namedtuple('ItemToPurchase', 'item_name item_price item_quantity item_description')
+ShoppingCart = namedtuple('ShoppingCart', 'customer_name current_date cart_items')
+# Fixme (1) Build the ItemToPurchase named tuple with the following atributes: (3 pts)
+
+# Fixme: (2) Write a function named construct_item() for ItemToPurchase that creates and returns a named tuple with the following specifications: (1 pt)
+def construct_cart():
+    return ShoppingCart('none', 'January 1, 2016', [])
+def construct_item():
+    return ItemToPurchase('none', 0, 0, 'none')
+# Fixme: (3) Write a function named print_item_cost() for ItemToPurchase that takes a named tuple as a parameter and prints the contents with the following specifications: (1 pt)
+def print_item_cost(item):
+    total = item.item_quantity * item.item_price
+    # print(item.item_name + ':', item.item_description + '.') 
+    print(item.item_name, "{:.0f}".format(item.item_quantity), "@", '$' + str(item.item_price), "= $" + "{:.0f}".format(item.item_price * item.item_quantity))
+# Fixme: (4) In the main section of your code, prompt the user for two items and create two objects of the ItemToPurchase named tuple using your construct_item() function. (2 pts) NOTE: You can replace the fields of a namedtuple using the _replace() function from the namedtuple collections. Here is a link to the documentation, and examples of how to use the method: https://docs.python.org/3/library/collections.html#collections.namedtuple
+def add_item(ShoppingCart, ItemToPurchase):
+    copy_list = ShoppingCart.cart_items
+    copy_list.append(ItemToPurchase)
+    return ShoppingCart._replace(cart_items = copy_list)
+
+def remove_item(ShoppingCart, item):
+    original = ShoppingCart.cart_items.copy()
+    copy_list = ShoppingCart.cart_items
+    for i in range(len(ShoppingCart.cart_items)):
+        if i < len(ShoppingCart.cart_items) and ShoppingCart.cart_items[i].item_name == item:
+            copy_list.remove(ShoppingCart.cart_items[i])
+    if copy_list == original:
+        print("Item not found in cart. Nothing removed.")
+
+#############
+def modify_item(ShoppingCart, item):
+    #
+    for i in range(len(ShoppingCart.cart_items)):
+        if ShoppingCart.cart_items[i].item_name == item.item_name:
+            if ShoppingCart.cart_items[i].item_quantity != item.item_quantity:
+                modify = construct_item()._replace(item_name = item.item_name, item_price = ShoppingCart.cart_items[i].item_price, item_quantity = int(item.item_quantity), item_description = ShoppingCart.cart_items[i].item_description)
+                ShoppingCart.cart_items[i] = modify
+        else:
+            print("Item not found in cart. Nothing modified.")
+            return False
+    # print(ShoppingCart.cart_items)
+                 
+    # if ItemToPurchase.item_name in ShoppingCart.cart_items:
+    #     if ItemToPurchase.item_price == 0 and ItemToPurchase.item_quantity == 0 and ItemToPurchase.item_description == 'none':
+    #         return
+    #     else:
+    #         lst = ShoppingCart.cart_items
+    #         lst.remove(ItemToPurchase.item_name)
+    #         ShoppingCart._replace(cart_items = lst)
+    # else:
+    #     print("Item not found in cart. Nothing modified.")
+
+def get_num_items_in_cart(ShoppingCart):
+    num_of_items = 0
+    for i in range(len(ShoppingCart.cart_items)):
+        num_of_items += (ShoppingCart.cart_items[i].item_quantity)
+    return num_of_items
+    
+def get_cost_of_cart(ShoppingCart):
+    total = 0
+    for i in range(len(ShoppingCart.cart_items)):
+        total +=  (ShoppingCart.cart_items[i].item_quantity) *  (ShoppingCart.cart_items[i].item_price)
+    return total
+
+def print_total(ShoppingCart):
+    print(ShoppingCart.customer_name + '\'s Shopping Cart - ' + ShoppingCart.current_date)
+    print("Number of Items: " + str(get_num_items_in_cart(ShoppingCart)) + '\n')
+    if get_num_items_in_cart(ShoppingCart) == 0:
+        print('SHOPPING CART IS EMPTY')
+
+    for i in range(len(ShoppingCart.cart_items)):
+        print_item_cost(ShoppingCart.cart_items[i])
+    print()
+    print("Total: $" + str(get_cost_of_cart(ShoppingCart)) + '\n') 
+
+def print_descriptions(ShoppingCart):
+    print(ShoppingCart.customer_name + '\'s Shopping Cart - ' + ShoppingCart.current_date)
+    print()
+    print("Item Descriptions")
+    for item in ShoppingCart.cart_items:
+        print(item.item_name + ': ' + item.item_description)
+    print()
+    
+def print_menu(ShoppingCart):
+    print("""MENU
+a - Add item to cart
+r - Remove item from cart
+c - Change item quantity
+i - Output items' descriptions
+o - Output shopping cart
+q - Quit\n""")
+    choice = input('Choose an option:\n')
+    while choice not in ['a', 'r', 'c', 'i', 'o', 'q'] and choice != 'q':
+        choice = input('Choose an option:\n')     
+    while choice in ['a', 'r', 'c', 'i', 'o', 'q']:
+        if choice =='q':
+            return False
+        elif choice == "o":
+            print('OUTPUT SHOPPING CART')
+            print_total(ShoppingCart)
+            print("""MENU
+a - Add item to cart
+r - Remove item from cart
+c - Change item quantity
+i - Output items' descriptions
+o - Output shopping cart
+q - Quit\n""")
+            choice = input('Choose an option:\n')
+        
+        elif choice == 'i':
+            print("OUTPUT ITEMS' DESCRIPTIONS")
+            print_descriptions(ShoppingCart)
+            
+            print("""MENU
+a - Add item to cart
+r - Remove item from cart
+c - Change item quantity
+i - Output items' descriptions
+o - Output shopping cart
+q - Quit\n""")
+            choice = input('Choose an option:\n')
+        
+        elif choice == 'a':
+            print("ADD ITEM TO CART")
+            new_name = input("Enter the item name:\n")
+            new_description = input("Enter the item description:\n")
+            new_price = int(input("Enter the item price:\n"))
+            new_quantity = int(input("Enter the item quantity:\n"))
+            print()
+            new_item = construct_item()._replace(item_name = new_name, item_price = new_price, item_quantity = new_quantity, item_description = new_description)
+            add_item(ShoppingCart, new_item)
+            print("""MENU
+a - Add item to cart
+r - Remove item from cart
+c - Change item quantity
+i - Output items' descriptions
+o - Output shopping cart
+q - Quit\n""")
+            choice = input('Choose an option:\n')
+        
+        elif choice == 'r':
+            print("REMOVE ITEM FROM CART")
+            remove = input("Enter name of item to remove:\n")
+            remove_item(ShoppingCart, remove)
+            print()
+            print("""MENU
+a - Add item to cart
+r - Remove item from cart
+c - Change item quantity
+i - Output items' descriptions
+o - Output shopping cart
+q - Quit\n""")
+            choice = input('Choose an option:\n')
+        
+        elif choice == 'c':
+            print("CHANGE ITEM QUANTITY")
+            new_name = input("Enter the item name:\n")
+            new_quantity = input("Enter the new quantity:\n")
+            modified = construct_item()._replace(item_name = new_name, item_quantity = new_quantity)
+            modify_item(ShoppingCart, modified)
+            print()
+            print("""MENU
+a - Add item to cart
+r - Remove item from cart
+c - Change item quantity
+i - Output items' descriptions
+o - Output shopping cart
+q - Quit\n""")
+            choice = input('Choose an option:\n')            
+            
+    
+if __name__ == "__main__":
+    name = input('Enter customer\'s name:\n')
+    date = input('Enter today\'s date:\n')
+    print()
+    print('Customer name:', name)
+    print('Today\'s date:', date)
+    print()
+    customer = construct_cart()._replace(customer_name = name, current_date = date)
+    print_menu(customer)
